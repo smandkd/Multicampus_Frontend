@@ -1,0 +1,12 @@
+
+2월 02, 2022 18:22:00.34 NEW SESSION
+2월 02, 2022 18:22:00.34 [12348:13844:0202/182200.342:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+2월 02, 2022 18:22:00.34 [12348:13844:0202/182200.343:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+2월 02, 2022 18:22:00.34 [12348:13844:0202/182200.343:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+2월 02, 2022 18:22:00.34 [12348:13844:0202/182200.346:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+2월 02, 2022 18:22:00.35 [12348:15728:0202/182200.349:ERROR:device_event_log_impl.cc(214)] [18:22:00.349] USB: usb_device_handle_win.cc:1050 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 02, 2022 18:22:00.43 [12348:10680:0202/182200.430:ERROR:connection_factory_impl.cc(425)] Failed to connect to MCS endpoint with error -106
+2월 02, 2022 18:22:23.98 [12348:10680:0202/182223.986:ERROR:connection_factory_impl.cc(425)] Failed to connect to MCS endpoint with error -106
+2월 02, 2022 18:22:31.64 [12348:15728:0202/182231.645:ERROR:account_info_fetcher.cc(62)] OnGetTokenFailure: Connection failed (-106).
+2월 02, 2022 18:22:44.33 [12348:10680:0202/182244.330:ERROR:connection_factory_impl.cc(425)] Failed to connect to MCS endpoint with error -106
+2월 02, 2022 18:24:16.39 [12348:10680:0202/182416.395:ERROR:connection_factory_impl.cc(425)] Failed to connect to MCS endpoint with error -106

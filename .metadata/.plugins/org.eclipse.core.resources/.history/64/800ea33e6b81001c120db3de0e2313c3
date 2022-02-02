@@ -1,0 +1,23 @@
+<%@ page contentType="text/html; charset=utf-8"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div styple="position:center">
+ 사진
+ <br/>
+ 	<a href="">Login</a>
+ 	<br/>
+ 	<a href="">Sign Up</a>
+</div>
+
+</body>
+</html>
+<!--
+ 메인페이지 
+
+-- 로그인, 회원가입
+-->
