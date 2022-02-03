@@ -1,0 +1,30 @@
+<%@ page contentType="text/html; charset=utf-8"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+.a {
+	text-align:center;
+	padding-top:120px;
+}
+#b {
+	border:1px solid;
+	width:150px;
+	margin:0 auto;
+}
+</style>
+</head>
+<body>
+<div class="a">
+	<table >
+		<td id="b">
+			<tr>순번</tr>
+			<tr>작성자</tr>
+			<tr>질문</tr>
+		</td>
+		
+	</table>
+</div>
+</body>
+</html>
