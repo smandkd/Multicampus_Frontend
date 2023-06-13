@@ -1,4 +1,5 @@
-<%@ page contentType="text/html; charset=utf-8" pageEncoding="EUC-KR"%>
+<%@ page contentType="text/html; charset=utf-8" pageEncoding="EUC-KR"
+import="Control.Util, java.io.File"%>
 <%@taglib prefix="q" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -8,7 +9,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 <script>
-<%-- 게시글 작성 함수 --%>
+<%-- 게시글 수정 함수 --%>
 function fun(){
 	const urlStr = window.location.href;
 	const url = new URL(urlStr);
@@ -65,15 +66,17 @@ window.onload=function(){
 	}
 	
 	<%-- 파일 업로드 이벤트리스너 --%>
+	var filename = document.getElementById('fileName');
+	var fname = urlParam.get('fname');
+	filename.innerText = fname;
+	
 	document.getElementById('submitFile').addEventListener('change', function(){
-		var filename = document.getElementById('fileName');
-		if( this.files[0] == undefined ) {
-			filename.innerText = '선택된 파일없음';
+		if( this.files[0] == null ) {
+			this.files[0].name = fname;
 		}
 		filename.innerText = this.files[0].name;
 	});
 }
-
 </script>
 <style type="text/css">
 <%-- 폰트 --%>
@@ -94,6 +97,20 @@ window.onload=function(){
 @media (max-width: 990px) {
 	.ol {
 		display:none !important;
+	}
+}
+@media (max-width: 575px) {
+	.ol {
+		display:none !important;
+	}
+	.title{
+		width:73.5% !important;
+	}
+	.content-width {
+		width: 80% !important;
+	}	
+	.content-width {
+		width:528px;
 	}
 }
 @media (max-width: 690px) {
@@ -117,20 +134,7 @@ window.onload=function(){
 		justify-self: center;
 	}
 }
-@media (max-width: 575px) {
-	.ol {
-		display:none !important;
-	}
-	.title{
-		width:73.5% !important;
-	}
-	.content-width {
-		width: 80% !important;
-	}	
-	.content-width {
-		width:528px;
-	}
-}
+
 <%-- a 태그 검정색 고정 --%>
 a {
 	color: black;
@@ -163,7 +167,6 @@ a {
 	margin-right: 95px;
 	border-radius: 0.4em;
 }
-
 .title{
 	margin-left: 40px;
 	width:528px;
@@ -214,7 +217,7 @@ a {
 .wrap-title {
 	width: 500px;
 	height: 100px;
-	margin-left: 150px;
+	margin-left: 100px;
 	margin-top: 50px;
 	justify-self: center;
 }
@@ -268,7 +271,7 @@ a {
 	</div>
 </nav>
 <!-- 사이드 메뉴 바 -->
-<div id="grid">
+<div>
 	<div class="col-xs-0.1 col-sm-1 col-md-3">
 		<div class="ol">
 			<div id="basic">
@@ -284,11 +287,13 @@ a {
 	</div>
 	<!-- 메인 영역 -->
 	<div id="main" class="align-column wrap-title col-xs-11.9 col-sm-11 col-md-9">
-		<form name="form" method="POST" action="question.do" id="write" enctype="multipart/form-data">
+		<form name="form" method="POST" action="change.do" id="write" enctype="multipart/form-data">
 			<input type="hidden" name="subject" value="${ subject }"/>
+			<input type="hidden" name="no" value="${ article.no }"/>
+			<input type="hidden" name="fsn_q_original" value="${ article.fsn_q }"/>
 			<!-- 제목 입력 영역 -->
 			<div>
-				<input class="title border-gray-radius" type="text" name="title" id="x" placeholder="제목"/>
+				<input class="title border-gray-radius" type="text" name="title" id="x" value="${ article.title }"/>
 			</div>
 			<br/>
 			<div class="content-ch-file-div-margin" >
@@ -303,9 +308,9 @@ a {
 						<option value="5">5</option>
 						<option value="6">6</option>
 					</select>
-				</div>			
+				</div>		
 				<!-- 내용 입력 영역 -->
-				<textarea class="content-width border-gray-radius" rows="10" name="content" id="y" placeholder="질문내용입력하세요"></textarea>
+				<textarea class="content-width border-gray-radius" rows="10" name="content" id="y">${ article.content }</textarea>
 				<!-- 파일 업로드 영역 -->
 				<label class="btn btn-default btn-file" for="submitFile">파일업로드
 					<input class="file-margin border-gray-radius" id="submitFile" type="file" name="fsn_q" style="display:none;"/>
@@ -314,7 +319,7 @@ a {
 				<!-- 제출 버튼 -->
 				<div>
 					<input class="write-button border-gray-radius" type="button" onclick="fun();" value="작성완료"/>
-				</div>		
+				</div>			
 			</div>
 		</form>
 	</div>

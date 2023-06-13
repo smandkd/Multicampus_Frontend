@@ -1,36 +1,100 @@
-<%@ page contentType="text/html; charset=utf-8"
-    pageEncoding="EUC-KR"%>
+<%@ page contentType="text/html; charset=utf-8" pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style type="text/css">
-.a {
-	text-align:center;
-	padding-top:120px;
+<%-- Ìè∞Ìä∏ --%>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap');
+.font {
+	font-family: 'IBM Plex Sans KR', sans-serif;
+	font-weight: bolder;
+	font-size: 20px;
 }
-#b {
-	border:1px solid;
-	width:150px;
+<%-- Ïù¥ÎØ∏ÏßÄ Î∞ïÏä§ --%>
+img {
+	float:left;
+	padding:0px auto;
+}
+#image {
+	height: 130px;
+	width:200px;
+	border-radius: 30px 30px 30px 30px;
 	margin:0 auto;
+	overflow:hidden;
+}
+#image-box {
+	width:100%;
+	height:99%;
+	object-fit:cover;
+}
+.image-size {
+	height: 28px;
+}
+.icon-white {
+	 filter:invert();
+}
+<%-- Î°úÍ∑∏Ïù∏, ÌöåÏõêÍ∞ÄÏûÖ Î≤ÑÌäº ÏÇ¨Ïù¥ Í∞ÑÍ≤©--%>
+.padding-bottom {
+	padding-bottom: 20px;
+}
+<%-- Î°úÍ∑∏Ïù∏, ÌöåÏõêÍ∞ÄÏûÖ ÌÖçÏä§Ìä∏ ÏÑ§Ï†ï --%>
+.text {
+	color: black;
+	text-decoration: none;
+}
+.width {
+	width:80px;
+	margin-left:60px;
+}
+.width-signup {
+	width:100px;
+	margin-left:52px;
+}
+<%-- Î°úÍ∑∏Ïù∏ , ÌöåÏõêÍ∞ÄÏûÖ Î≤ÑÌäº ÏúÑÏπò --%>
+.a {
+	width:200px;
+	height:150px;
+	text-align:center;
+	position:absolute;
+	top:40%;
+	left:50%;
+	margin-left:-100px;
+	margin-top:-75px;
+}
+body {
+	background: url('image/board-4.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 </style>
 </head>
-<body>
+<body class="font">
 <div class="a">
-<div id="b">
- ªÛπŒ ∞Ê¡ÿ «¡∑Œ¡ß∆Æ
+<div id="image">
+	<img id="image-box" src="image/KakaoTalk_20220204_164443247.jpg">
 </div>
  <br/>
- 	<a href="login.jsp">Login</a>
- 	<br/>
- 	<a href="signup.jsp">Sign Up</a>
+	<div class="width icon-white padding-bottom">
+ 		<a class="text " href="login.do" >
+ 			<img class="image-size" src="image/login-box-line.svg">Login
+ 		</a>
+	</div>
+ 	<div class="icon-white width-signup">
+ 		<a class="text font-weight " href="signup.do">
+ 			<img class="image-size" src="image/account-box-line.svg">Sign Up
+ 		</a>
+ 	</div>
 </div>
 
 </body>
 </html>
 <!--
- ∏ﬁ¿Œ∆‰¿Ã¡ˆ 
-
--- ∑Œ±◊¿Œ, »∏ø¯∞°¿‘
+	background-color: #F2D7B6;
+	height: 600px;
+	border-bottom: 600px solid #A9D9CB;
+	border-right: 670px solid #F29985;
+	margin: auto;
 -->
